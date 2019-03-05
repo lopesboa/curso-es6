@@ -52,46 +52,65 @@
 
 // teste(10);
 
+
 // ############ ARRAY OPARATIONS ############
-const arr = [1, 3, 4, 5, 8, 9];
+// const arr = [1, 3, 4, 5, 8, 9];
 
 /**
 *   MAP
 *   It serves to traverse the array and return a new or the same information
 */
-const newArr = arr.map(function(item, index){
-    return item + index;
-});
+// const newArr = arr.map(function(item, index){
+//     return item + index;
+// });
 
-console.log(newArr);
+// console.log(newArr);
 
 /**
- *  REDUCE
+ * REDUCE
  * Serves to consume every ARRAY an transform into a single 
  * variable, usually a number
  * */
-const sum = arr.reduce(function(total, next){
-    return total + next;
-});
+// const sum = arr.reduce(function(total, next){
+//     return total + next;
+// });
 
-console.log(sum);
+// console.log(sum);
 
 /**
  * FILTER
  * Serves to filter a ARRAY */ 
-const filter = arr.filter(function(item){
-    return item % 2 === 0;
-});
+// const filter = arr.filter(function(item){
+//     return item % 2 === 0;
+// });
 
-console.log(filter);
+// console.log(filter);
 
 /**
  * FILTER
  * Is used to check if there is any information inside in the 
  * array or if we can find this information inside the array
  */
-const find = arr.find(function(item){
-    return item === 4;
-});
+// const find = arr.find(function(item){
+//     return item === 4;
+// });
 
-console.log(find);
+// console.log(find);
+
+
+/**
+ * ############ ARROW FUNCTIONS ############ 
+ * */ 
+const arr = [1, 3, 4, 5, 6];
+
+// const newArr = arr.map(function(item){
+//     return item * 2;
+// });
+const newArr = arr.map(item => item * 2);
+
+console.log(newArr);
+
+// NOT RECOMMENDED
+const teste = () => ({nome: 'Lopes'});
+
+console.log(teste());
