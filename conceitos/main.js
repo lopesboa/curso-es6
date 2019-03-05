@@ -176,17 +176,27 @@
 // console.log(soma(1, 3, 4));
 
 // SPREAD
-const arr1 = [1, 2, 3];
-const arr2 = [4, 5, 6];
+// const arr1 = [1, 2, 3];
+// const arr2 = [4, 5, 6];
 
-const arr3 = [...arr1, ...arr2];
-console.log(arr3);
+// const arr3 = [...arr1, ...arr2];
+// console.log(arr3);
 
-const usuario1 = {
-    nome: 'Lopes',
-    idade: 31,
-    empresa: 'Bakongo'
-};
+// const usuario1 = {
+//     nome: 'Lopes',
+//     idade: 31,
+//     empresa: 'Bakongo'
+// };
 
-const usuario2 = {...usuario1, nome: 'Naiara' };
-console.log(usuario2);
+// const usuario2 = {...usuario1, nome: 'Naiara' };
+// console.log(usuario2);
+
+
+/**
+ * LITERAL TEMPLATE
+ */
+const nome = 'Lopes';
+const idade = 31;
+
+// console.log('Meu nome é ' + nome + 'e tenho ' + idade + ' anos');
+console.log(`Meu nome é ${nome} e tenho ${idade} anos`);

@@ -1,9 +1,5 @@
 "use strict";
 
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 // ############ CLASSES ES6 ############
 // class List{
 //     constructor(){
@@ -150,18 +146,22 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 // }
 // console.log(soma(1, 3, 4));
 // SPREAD
-var arr1 = [1, 2, 3];
-var arr2 = [4, 5, 6];
-var arr3 = [].concat(arr1, arr2);
-console.log(arr3);
-var usuario1 = {
-  nome: 'Lopes',
-  idade: 31,
-  empresa: 'Bakongo'
-};
+// const arr1 = [1, 2, 3];
+// const arr2 = [4, 5, 6];
+// const arr3 = [...arr1, ...arr2];
+// console.log(arr3);
+// const usuario1 = {
+//     nome: 'Lopes',
+//     idade: 31,
+//     empresa: 'Bakongo'
+// };
+// const usuario2 = {...usuario1, nome: 'Naiara' };
+// console.log(usuario2);
 
-var usuario2 = _objectSpread({}, usuario1, {
-  nome: 'Naiara'
-});
+/**
+ * LITERAL TEMPLATE
+ */
+var nome = 'Lopes';
+var idade = 31; // console.log('Meu nome é ' + nome + 'e tenho ' + idade + ' anos');
 
-console.log(usuario2);
+console.log("Meu nome \xE9 ".concat(nome, " e tenho ").concat(idade, " anos"));
