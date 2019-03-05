@@ -185,7 +185,7 @@
 // const usuario1 = {
 //     nome: 'Lopes',
 //     idade: 31,
-//     empresa: 'Bakongo'
+//     empresa: 'Rocketseat'
 // };
 
 // const usuario2 = {...usuario1, nome: 'Naiara' };
@@ -193,10 +193,24 @@
 
 
 /**
- * LITERAL TEMPLATE
+ * ############ LITERAL TEMPLATE ############
  */
-const nome = 'Lopes';
-const idade = 31;
+// const nome = 'Lopes';
+// const idade = 31;
 
 // console.log('Meu nome é ' + nome + 'e tenho ' + idade + ' anos');
-console.log(`Meu nome é ${nome} e tenho ${idade} anos`);
+// console.log(`Meu nome é ${nome} e tenho ${idade} anos`);
+
+/**
+ * ############ OBJECT SHORT NOTATION ############
+ */
+const nome = 'Lopes';
+const idade = 23;
+
+const usuario = {
+    nome,
+    idade,
+    empresa: 'Rocketseat'
+};
+
+console.log(usuario);
