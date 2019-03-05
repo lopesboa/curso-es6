@@ -1,3 +1,4 @@
+// ############ CLASSES ES6 ############
 // class List{
 //     constructor(){
 //         this.data = [];
@@ -29,11 +30,25 @@
 
 // STATIC METHOD
 
-class Matematica{
-    static soma (a, b){
-        return a + b;
-    }
+// class Matematica{
+//     static soma (a, b){
+//         return a + b;
+//     }
 
+// }
+
+// console.log(Matematica.soma(1, 2));
+
+
+// ############ CONT & LET ############
+function teste(x){
+    let y = 2;
+
+    if(x > 5){
+        let y = 4;
+        console.log(x, y);
+    }
 }
 
-console.log(Matematica.soma(1, 2));
+teste(10);
+
