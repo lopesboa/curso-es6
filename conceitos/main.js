@@ -129,21 +129,64 @@
 /**
  * ############ OBJECT DESTRUCTURING ############
  */
-const usuario ={
-    nome: 'Lopes',
-    idade: 31,
-    endereco: {
-        cidade: 'Guaratinguetá',
-        estado: 'SP'
-    }
-};
+// const usuario ={
+//     nome: 'Lopes',
+//     idade: 31,
+//     endereco: {
+//         cidade: 'Guaratinguetá',
+//         estado: 'SP'
+//     }
+// };
 
 // const {nome, idade, endereco:{cidade} } = usuario;
 // console.log(nome);
 // console.log(idade);
 // console.log(cidade);
 
-function mostraNome({ nome, idade }){
-    console.log(nome, idade);
-}
-mostraNome(usuario);
+// function mostraNome({ nome, idade }){
+//     console.log(nome, idade);
+// }
+// mostraNome(usuario);
+
+/**
+ * ############ REST/SPREAD OPERATORS
+ */
+// REST IN OBJECT
+// const usuario = {
+//     nome: 'Lopes',
+//     idade: 31,
+//     empresa: 'Jobless'
+// };
+
+// const {nome, ...resto } = usuario;
+// console.log(nome);
+// console.log(resto);
+
+// REST IN ARRAY
+// const arr = [1, 2, 3, 4];
+// const [a, b, ...c] = arr;
+// console.log(a);
+// console.log(b);
+// console.log(c);
+
+// REST IN FUNCTION
+// function soma(a, b, ...params){
+//     return params.reduce((total, next) => total + next);
+// }
+// console.log(soma(1, 3, 4));
+
+// SPREAD
+const arr1 = [1, 2, 3];
+const arr2 = [4, 5, 6];
+
+const arr3 = [...arr1, ...arr2];
+console.log(arr3);
+
+const usuario1 = {
+    nome: 'Lopes',
+    idade: 31,
+    empresa: 'Bakongo'
+};
+
+const usuario2 = {...usuario1, nome: 'Naiara' };
+console.log(usuario2);

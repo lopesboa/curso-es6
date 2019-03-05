@@ -1,5 +1,9 @@
 "use strict";
 
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 // ############ CLASSES ES6 ############
 // class List{
 //     constructor(){
@@ -105,22 +109,59 @@
 /**
  * ############ OBJECT DESTRUCTURING ############
  */
-var usuario = {
-  nome: 'Lopes',
-  idade: 31,
-  endereco: {
-    cidade: 'Guaratinguetá',
-    estado: 'SP'
-  }
-}; // const {nome, idade, endereco:{cidade} } = usuario;
+// const usuario ={
+//     nome: 'Lopes',
+//     idade: 31,
+//     endereco: {
+//         cidade: 'Guaratinguetá',
+//         estado: 'SP'
+//     }
+// };
+// const {nome, idade, endereco:{cidade} } = usuario;
 // console.log(nome);
 // console.log(idade);
 // console.log(cidade);
+// function mostraNome({ nome, idade }){
+//     console.log(nome, idade);
+// }
+// mostraNome(usuario);
 
-function mostraNome(_ref) {
-  var nome = _ref.nome,
-      idade = _ref.idade;
-  console.log(nome, idade);
-}
+/**
+ * ############ REST/SPREAD OPERATORS
+ */
+// REST IN OBJECT
+// const usuario = {
+//     nome: 'Lopes',
+//     idade: 31,
+//     empresa: 'Jobless'
+// };
+// const {nome, ...resto } = usuario;
+// console.log(nome);
+// console.log(resto);
+// REST IN ARRAY
+// const arr = [1, 2, 3, 4];
+// const [a, b, ...c] = arr;
+// console.log(a);
+// console.log(b);
+// console.log(c);
+// REST IN FUNCTION
+// function soma(a, b, ...params){
+//     return params.reduce((total, next) => total + next);
+// }
+// console.log(soma(1, 3, 4));
+// SPREAD
+var arr1 = [1, 2, 3];
+var arr2 = [4, 5, 6];
+var arr3 = [].concat(arr1, arr2);
+console.log(arr3);
+var usuario1 = {
+  nome: 'Lopes',
+  idade: 31,
+  empresa: 'Bakongo'
+};
 
-mostraNome(usuario);
+var usuario2 = _objectSpread({}, usuario1, {
+  nome: 'Naiara'
+});
+
+console.log(usuario2);
