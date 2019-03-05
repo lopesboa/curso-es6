@@ -101,16 +101,26 @@
 /**
  * ############ ARROW FUNCTIONS ############ 
  * */ 
-const arr = [1, 3, 4, 5, 6];
+// const arr = [1, 3, 4, 5, 6];
 
 // const newArr = arr.map(function(item){
 //     return item * 2;
 // });
-const newArr = arr.map(item => item * 2);
+// const newArr = arr.map(item => item * 2);
 
-console.log(newArr);
+// console.log(newArr);
 
-// NOT RECOMMENDED
-const teste = () => ({nome: 'Lopes'});
+// const teste = () => ({nome: 'Lopes'});
 
-console.log(teste());
+// console.log(teste());
+
+
+/**
+ * ############ DEFAULT VALUE ############
+ */
+// function soma(a = 3, b = 6){
+//     return a + b;
+// }
+const soma = (a = 3, b = 6) =>  a + b;
+console.log(soma(1));
+console.log(soma());

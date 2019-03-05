@@ -83,19 +83,26 @@
 /**
  * ############ ARROW FUNCTIONS ############ 
  * */
-var arr = [1, 3, 4, 5, 6]; // const newArr = arr.map(function(item){
+// const arr = [1, 3, 4, 5, 6];
+// const newArr = arr.map(function(item){
 //     return item * 2;
 // });
+// const newArr = arr.map(item => item * 2);
+// console.log(newArr);
+// const teste = () => ({nome: 'Lopes'});
+// console.log(teste());
 
-var newArr = arr.map(function (item) {
-  return item * 2;
-});
-console.log(newArr); // NOT RECOMMENDED
-
-var teste = function teste() {
-  return {
-    nome: 'Lopes'
-  };
+/**
+ * ############ DEFAULT VALUE ############
+ */
+// function soma(a = 3, b = 6){
+//     return a + b;
+// }
+var soma = function soma() {
+  var a = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 3;
+  var b = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 6;
+  return a + b;
 };
 
-console.log(teste());
+console.log(soma(1));
+console.log(soma());
