@@ -121,6 +121,29 @@
 // function soma(a = 3, b = 6){
 //     return a + b;
 // }
-const soma = (a = 3, b = 6) =>  a + b;
-console.log(soma(1));
-console.log(soma());
+// const soma = (a = 3, b = 6) =>  a + b;
+// console.log(soma(1));
+// console.log(soma());
+
+
+/**
+ * ############ OBJECT DESTRUCTURING ############
+ */
+const usuario ={
+    nome: 'Lopes',
+    idade: 31,
+    endereco: {
+        cidade: 'Guaratinguetá',
+        estado: 'SP'
+    }
+};
+
+// const {nome, idade, endereco:{cidade} } = usuario;
+// console.log(nome);
+// console.log(idade);
+// console.log(cidade);
+
+function mostraNome({ nome, idade }){
+    console.log(nome, idade);
+}
+mostraNome(usuario);
