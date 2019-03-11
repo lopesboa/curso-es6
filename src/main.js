@@ -15,6 +15,18 @@ class App{
         this.formEl.onsubmit = event => this.addRepository(event);
     }
 
+    setLoading(loading = true){
+        if(loading === true){
+            let loadingEl = document.createElement('span');
+            loadingEl.appendChild(document.createTextNode('Carregando'));
+            loadingEl.setAttribute('id', 'loading');
+
+            this.formEl.appendChild(loadingEl);
+        }else{
+            document.getElementById('loading').remove();
+        }
+    }
+
     async addRepository(event){
         event.preventDefault();
 
@@ -23,18 +35,27 @@ class App{
         if(repoInput.length === 0)
             return;
 
-        const response = await api.get(`/repos/${repoInput}`);
+        this.setLoading();
 
-        console.log(response);
+        try{
+            const response = await api.get(`/repos/${repoInput}`);
 
-        this.repositories.push({
-            name: 'rocketseat.com.br',
-            description: 'Tire a sua ideia do papel e dê vida à sua startup.',
-            avatar_url: 'https://avatars0.githubusercontent.com/u/28929274?v=4',
-            html_url: 'http://github.com/rocketseat/rocketseat.com.br',
-        });
+            const { name, description, html_url, owner:{avatar_url}} = response.data;
 
-        this.render();
+            this.repositories.push({
+                name,
+                description,
+                avatar_url,
+                html_url,
+            });
+
+            this.inputEl.value = '';
+            this.render();
+        }catch(err){
+            alert('O repositório não existe!');
+        }
+
+        this.setLoading(false);
     }
 
     render(){
@@ -51,7 +72,7 @@ class App{
             descriptionEl.appendChild(document.createTextNode(repo.description));
 
             let linkEl = document.createElement('a');
-            linkEl.setAttribute('http', repo.html_url);
+            linkEl.setAttribute('href', repo.html_url);
             linkEl.setAttribute('target', '_blank');
             linkEl.appendChild(document.createTextNode('Acessar'));
 
